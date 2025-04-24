@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Gospel Message Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gospel Message Regular'), url('/assets/fonts/GospelMessage-X39WG.woff') format('woff');
+}
+
+:root {
+    --gospel-message-font: 'Gospel Message Regular'
+}
+
+* {
+    font-family: var(--gospel-message-font);
+}
+
+body {
+    background-image: url(/assets/images/distant_cross.png);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#featured {
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 2em;
+    /* height: 70vh; */
+    /* margin: auto; */
+    display: flex;
+    flex-direction: column;
+}
+
+#featured h1 {
+    color: rgb(255, 240, 152);
+    text-align: center;
+    font-size: clamp(2rem, 12vw, 5rem);
+}
+
+#featured p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: white;
+    font-size: clamp(1rem, 9vw, 3rem);
+}
