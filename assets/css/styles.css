@@ -193,5 +193,7 @@ header h1 {
         padding: 1rem;
     }
 
-
+    .large-text {
+        font-size: clamp(1.2rem, 13vw, 2.3rem);
+    }
 }
