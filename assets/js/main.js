@@ -1,1 +1,1 @@
-console.log("TEST")
+console.log("Hear the Good News!!")
