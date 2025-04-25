@@ -10,13 +10,13 @@
 :root {
     --gospel-message-font: 'Gospel Message Regular';
     --standard-font: Georgia, 'Times New Roman', Times, serif;
-    --highlight-color: #7c702f;
+    --highlight-color: #000000;
     --verse-color: #ffd500;
-    --hope-color: #FFA500;
+    --hope-color: #ffc862;
     --card-bg: rgba(255, 255, 255, 0.15);
     --text-color: #111111;
     --heading-color: #021e3a;
-    --feature-heading-color: #000000;
+    --header-subtext-color: #ffffff;
     --card-shadow: rgba(0, 0, 0, 0.6);
     --text-glow: 1px 1px 3px rgba(94, 75, 75, 0.7);
 }
@@ -29,25 +29,31 @@
 }
 
 body {
-    background-image: url(/assets/images/sunset_cross.png);
+    color: var(--text-color);
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0)), url(/assets/images/distant_cross.png);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    color: var(--text-color);
-    padding: 1rem;
 }
 
 header {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0)), url(/assets/images/sunset_cross.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-size: clamp(1rem, 20vw, 4rem);
+    height: 100vh;
     text-align: center;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    padding: .5rem;
 }
 
 header h1 {
-    font-family: var(--standard-font);
-    margin: 0.2rem;
-    color: var(--hope-color);
+    font-family: var(--gospel-message-font);
+    margin: auto;
     text-shadow: var(--text-glow);
 }
 
@@ -58,7 +64,6 @@ header h1 {
     padding: 2rem;
     max-width: 960px;
     margin: auto;
-    border-radius: 1rem;
 }
 
 #feature h1 {
@@ -68,18 +73,16 @@ header h1 {
 
 .card {
     background: var(--card-bg);
-    border-radius: 0.75rem;
     box-shadow: 0 4px 12px var(--card-shadow);
     padding: 1.5rem;
     margin: 0.5rem 0;
     backdrop-filter: blur(8px);
-    border-left: 5px solid var(--highlight-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 6px 18px #f7ebeb;
 }
 
 .card h1 {
@@ -100,17 +103,17 @@ header h1 {
 .divider {
     border: none;
     height: 2px;
-    background: linear-gradient(to right, var(--highlight-color), var(--verse-color));
-    margin: 2rem 0;
+    background: linear-gradient(to right, black, var(--hope-color));
+    margin: 1.2rem 0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-.feature-heading {
+.header-subtext {
     text-align: center;
-    color: var(--feature-heading-color);
+    color: var(--header-subtext-color);
     font-size: clamp(1.2rem, 9vw, 3rem);
     font-family: var(--standard-font);
-    margin-bottom: 1rem;
+    margin: auto;
     text-shadow: var(--text-glow);
 }
 
@@ -123,9 +126,21 @@ header h1 {
     color: var(--heading-color);
     font-family: var(--standard-font);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border-radius: 0.75rem;
     text-align: center;
     text-shadow: var(--text-glow);
+}
+
+.hope {
+    color: var(--hope-color);
+    text-shadow: 1px 1px 2px black;
+}
+
+.large-text {
+    font-size: clamp(1.2rem, 6vw, 3rem);
+}
+
+.red {
+    color: red;
 }
 
 .verse {
@@ -138,17 +153,23 @@ header h1 {
 }
 
 .white {
-    background: white;
+    color: white;
 }
+
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-    body {
+    header {
+        font-size: clamp(1.4rem, 15vw, 2.5rem);
         padding: 0.5rem;
     }
 
     header h1 {
         font-size: clamp(2rem, 20vw, 5rem);
+    }
+
+    body {
+        background-image: url(/assets/images/distant_cross_mobile.png);
     }
 
     #feature {
@@ -159,7 +180,7 @@ header h1 {
         padding: 1rem;
     }
 
-    .card h1, .feature-heading {
+    .card h1, .header-subtext {
         font-size: clamp(1.8rem, 17vw, 2.8rem);
     }
 
@@ -172,8 +193,5 @@ header h1 {
         padding: 1rem;
     }
 
-    header {
-        font-size: clamp(1.4rem, 15vw, 2.5rem);
-        padding: 0.5rem;
-    }
+
 }
