@@ -1,2 +1,1 @@
-# hunghly.github.io
-Personal Website
+Link to website: hunghly.github.io
